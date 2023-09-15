@@ -1,0 +1,43 @@
+<div class="container">
+  <nav class="bacl">
+    <a class="navbar-brand">Bet Building App</a>
+  </nav>
+
+<div class="marn">
+  <h3>Football</h3>
+  <p>Select Date</p>
+  <button (click)="showPreviousWeek()"><<</button>
+  <button class="date-header" *ngFor="let date of visibleDates" (click)="getMatchData(date)">{{ date | date: 'EEE,d MMM' }}</button>
+  <button (click)="showNextWeek()">>></button>
+</div>
+
+
+<div>
+  <table class="grid-table">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>League Name</th>
+        <th>Match Name</th>
+        <th>Kick-Off UTC</th>
+        <th>Match Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of matchesOnTargetDate | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" (click)="redirectToNextComponent(item)">
+        <td>{{ item.Country }}</td>
+        <td>{{ item.LeagueName }}</td>
+        <td>{{ item.MatchName }}</td>
+        <td>{{ item.KickOffUtc }}</td>
+        <td>{{ item.MatchDate }}</td>
+        <td *ngIf="IsDatas">{{ item.MatchTime }}</td>
+      </tr>
+    </tbody>
+  </table>
+<div *ngIf="IsData" class="pagination">
+  <pagination-controls (pageChange)="setPage($event)"></pagination-controls>
+</div>
+</div>
+
+
+

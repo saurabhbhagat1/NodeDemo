@@ -1,0 +1,56 @@
+<div class="container">
+  <nav class="bacl">
+    <a class="navbar-brand">Make It A Bet Builder?</a>
+  </nav>
+
+<table class="grid-table" >
+  <thead>
+    <tr>
+      <th>Match Name</th>
+      <th>Match Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ MatchName }}</td>
+      <td>{{ MatchTime }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="sport">
+    <label for="markets">Market :  </label>
+    <select  name="markets" id="markets" class="drop-drop" #selectedMarketDropdown (change)="loadData(selectedMarketDropdown.value)">
+      <option *ngFor="let market of marketData" value="market.MarketId" >{{market.MarketName}}</option>
+      
+    </select>
+    <label for="markets" class="left">Legs :  </label>
+    <select  name="legs" id="legs" class="drop-drop" #selectedLegsDropdown (change)="loadData(selectedLegsDropdown.value)">
+      <option *ngFor="let legs of legsData" value="legs.selectionId">{{legs.selectionValue}}</option>
+      
+    </select>
+  </div>
+  
+  <div>
+    <table class="grid-tables">
+      <thead>
+        <tr>
+          <th>Pick</th>
+          <th>Market</th>
+          <th>Sub Market</th>
+          <th>Outcome</th>
+          <th>Out Stat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr *ngFor="let item of tableData">
+          <td>{{ item.Country }}</td>
+          <td>{{ item.LeagueName }}</td>
+          <td>{{ item.MatchName }}</td>
+          <td>{{ item.KickOffUtc }}</td>
+          <td>{{ item.MatchDate }}</td> 
+         
+        </tr>-->
+      </tbody>
+    </table>
+  </div>

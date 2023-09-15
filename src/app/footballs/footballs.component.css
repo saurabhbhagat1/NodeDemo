@@ -1,0 +1,49 @@
+.grid-table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 150px;
+  }
+  
+  .grid-table th, .grid-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .grid-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .grid-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .grid-table tbody tr:hover {
+    background-color: #ddd;
+  }
+
+  .marn{
+    margin-left: 155px;
+    
+  }
+
+  .date-header{
+    margin: 9px;
+    padding: 4px;
+    
+    border-radius: 30px;
+  }
+  
+  .bacl{
+    background-color: rgb(174, 15, 18);
+    padding: 20px;
+  }
+
+.pagination{
+  margin-left: 95px;
+}
+
+.navbar-brand{
+  font-size: 27px;
+    font-weight: bold;
+}
