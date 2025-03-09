@@ -23,4 +23,9 @@ steps:
   inputs:
     SourceFolder: '$(build.sourcesdirectory)/dist'
     Contents: '**/*'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    TargetFolder: '$(build.artifactstagingdirectory)' 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'rohan'
+    publishLocation: 'Container'
